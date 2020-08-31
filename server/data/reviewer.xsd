@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.peerreview.edu/reviewer" xmlns:a="http://www.peerreview.edu/author"
+    xmlns:r="http://www.peerreview.edu/reviewer">
+    <xs:import namespace="http://www.peerreview.edu/author" schemaLocation="author.xsd"/>
+</xs:schema>
