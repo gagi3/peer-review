@@ -33,6 +33,7 @@
               "src/assets/xonomy/xonomy.css"
             ],
             "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
               "src/assets/xonomy/xonomy.js"
             ]
           },
