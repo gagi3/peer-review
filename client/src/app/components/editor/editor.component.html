@@ -1,0 +1,13 @@
+<mat-button-toggle-group>
+  <mat-button-toggle (click)="switchMode('nerd')" value="nerd" aria-label="Nerd mode">
+    NERD
+  </mat-button-toggle>
+  <mat-button-toggle (click)="switchMode('laic')" value="laic" aria-label="Laic mode">
+    LAIC
+  </mat-button-toggle>
+</mat-button-toggle-group>
+
+<div id="editor">
+
+</div>
+<button mat-flat-button color="accent" (click)="getXML()">OUTPUT</button>
