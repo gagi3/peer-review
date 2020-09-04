@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    targetNamespace="http://www.peerreview.edu/author" xmlns:a="http://www.peerreview.edu/author">
-
+    targetNamespace="http://www.peerreview.edu/author" xmlns:au="http://www.peerreview.edu/author"
+    xmlns:a="http://www.peerreview.edu/article" xmlns:u="http://www.peerreview.edu/user">
     <xs:import namespace="http://www.peerreview.edu/user" schemaLocation="user.xsd"/>
+    <xs:import namespace="http://www.peerreview.edu/article" schemaLocation="article.xsd"/>
+    <xs:element name="Author" type="au:Author"/>
+    <xs:complexType name="Author">
+        <xs:sequence>
+            <xs:element name="User" type="u:User"/>
+            <xs:element maxOccurs="unbounded" name="Articles" type="a:Article"/>
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.peerreview.edu/institution"
+    xmlns:a="http://www.peerreview.edu/article" xmlns:ad="http://www.peerreview.edu/address"
+    xmlns:i="http://www.peerreview.edu/institution">
+
+    <xs:import namespace="http://www.peerreview.edu/address" schemaLocation="address.xsd"/>
+    <xs:import namespace="http://www.peerreview.edu/article" schemaLocation="article.xsd"/>
+    <xs:element name="Institution" type="i:Institution"/>
+    <xs:complexType name="Institution">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="address" type="ad:Address"/>
+        </xs:sequence>
+        <xs:attribute name="institution_id" type="xs:ID"/>
+    </xs:complexType>
+</xs:schema>

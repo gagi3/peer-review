@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.peerreview.edu/article" xmlns:a="http://www.peerreview.edu/article"
+    xmlns:au="http://www.peerreview.edu/author">
+    <xs:import namespace="http://www.peerreview.edu/author" schemaLocation="author.xsd"/>
+    <xs:element name="Article" type="a:Article"/>
+    <xs:complexType name="Article">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="metadata" type="a:Metadata"/>
+            <xs:element name="authors" type="au:Author" maxOccurs="unbounded"/>
+            <xs:element name="date" type="xs:date"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="abstract" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="keywords">
+                <xs:simpleType>
+                    <xs:list itemType="xs:string"/>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="section" type="a:Section"/>
+            <xs:element maxOccurs="unbounded" name="literature" type="a:Article"/>
+        </xs:sequence>
+        <xs:attribute name="article_id" type="xs:ID"/>
+    </xs:complexType>
+    <xs:complexType name="Section">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" name="content" type="a:Content"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Content">
+        <xs:sequence>
+            <xs:element name="text" type="xs:string"/>
+            <xs:element name="annotation" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Metadata">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="data" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

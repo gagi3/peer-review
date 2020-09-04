@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
     targetNamespace="http://www.peerreview.edu/address" xmlns:ad="http://www.peerreview.edu/address">
+    <xs:element name="Address" type="ad:Address"/>
     <xs:complexType name="Address">
         <xs:sequence>
             <xs:element name="postal_code" type="xs:int"/>
