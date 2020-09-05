@@ -4,7 +4,6 @@ import edu.peerreview.server.model.auth.JWTResponse;
 import edu.peerreview.server.model.auth.SignInRequest;
 import edu.peerreview.server.model.auth.SignUpRequest;
 import edu.peerreview.server.model.auth.UserPrincipal;
-import edu.peerreview.server.model.xml.User;
 import edu.peerreview.server.security.JWTProvider;
 import edu.peerreview.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +28,7 @@ public class UserController {
     UserService userService;
     @Autowired
     AuthenticationManager authenticationManager;
+
     @PostMapping("/login")
     public ResponseEntity<JWTResponse> login(@RequestBody SignInRequest request) {
         Authentication authentication = authenticationManager.authenticate(
@@ -42,6 +42,7 @@ public class UserController {
         }
         return new ResponseEntity<>(new JWTResponse(token, user.getUsername(), user.getAuthorities()), HttpStatus.OK);
     }
+
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody SignUpRequest request) throws XMLDBException, JAXBException {
         try {

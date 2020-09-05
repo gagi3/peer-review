@@ -18,9 +18,11 @@ public class JAXBService {
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         marshaller.marshal(object, out);
     }
+
     public <T> T unmarshal(String content, Class<T> genericClass) {
         return JAXB.unmarshal(new StringReader(content), genericClass);
     }
+
     public void marshalToString(Object object, Writer writer, Class cl) throws JAXBException {
         JAXBContext context = JAXBContext.newInstance(cl);
         Marshaller marshaller = context.createMarshaller();

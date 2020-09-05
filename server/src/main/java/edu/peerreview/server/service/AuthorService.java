@@ -1,12 +1,9 @@
 package edu.peerreview.server.service;
 
-import edu.peerreview.server.model.auth.SignUpRequest;
-import edu.peerreview.server.model.xml.Address;
 import edu.peerreview.server.model.xml.Author;
 import edu.peerreview.server.model.xml.User;
-import edu.peerreview.server.repository.CommonRepository;
 import edu.peerreview.server.repository.AuthorRepository;
-import edu.peerreview.server.util.DBConnection;
+import edu.peerreview.server.repository.CommonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

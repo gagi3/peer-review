@@ -6,7 +6,6 @@ import edu.peerreview.server.model.xml.Author;
 import edu.peerreview.server.model.xml.User;
 import edu.peerreview.server.repository.CommonRepository;
 import edu.peerreview.server.repository.UserRepository;
-import edu.peerreview.server.util.DBConnection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

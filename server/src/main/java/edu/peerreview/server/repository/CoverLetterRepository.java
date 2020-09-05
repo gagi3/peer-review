@@ -1,6 +1,6 @@
 package edu.peerreview.server.repository;
 
-import edu.peerreview.server.model.xml.User;
+import edu.peerreview.server.model.xml.CoverLetter;
 import edu.peerreview.server.service.JAXBService;
 import edu.peerreview.server.util.DBConnection;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.io.OutputStream;
 import java.util.HashMap;
 
 @Repository
-public class UserRepository {
+public class CoverLetterRepository {
     @Autowired
     private DBConnection connection;
     @Autowired
@@ -25,23 +25,23 @@ public class UserRepository {
     @Autowired
     private CommonRepository commonRepository;
 
-    public User save(User user) throws XMLDBException, JAXBException {
-        Collection collection = connection.getOrCreateCollection("/db/peerreview/user");
+    public CoverLetter save(CoverLetter coverLetter) throws XMLDBException, JAXBException {
+        Collection collection = connection.getOrCreateCollection("/db/peerreview/cover_letter");
         XMLResource resource = (XMLResource) collection.createResource(null, XMLResource.RESOURCE_TYPE);
         OutputStream stream = new ByteArrayOutputStream();
-        jaxbService.marshal(user, stream, User.class);
+        jaxbService.marshal(coverLetter, stream, CoverLetter.class);
         resource.setContent(stream);
         collection.storeResource(resource);
-        return user;
+        return coverLetter;
     }
 
-    public void generateUserXML(String email, String file) throws XMLDBException, JAXBException, FileNotFoundException {
-        String xpath = "/u:User[u:email='" + email + "']";
+    public void generateCoverLetterXML(String ID, String file) throws XMLDBException, JAXBException, FileNotFoundException {
+        String xpath = "/c:CoverLetter[c:cover_letter_id='" + ID + "']";
         HashMap<String, String> namespace = new HashMap<>();
-        namespace.put("u", "http://www.peerreview.edu/user");
-        ResourceSet result = commonRepository.runXpath("/db/peerreview/user", namespace, xpath);
-        User user = (User) commonRepository.resourceSetToClass(result, User.class);
+        namespace.put("au", "http://www.peerreview.edu/cover_letter");
+        ResourceSet result = commonRepository.runXpath("/db/peerreview/cover_letter", namespace, xpath);
+        CoverLetter coverLetter = (CoverLetter) commonRepository.resourceSetToClass(result, CoverLetter.class);
         String xmlFile = "data/xml-schemas/instance/" + file + ".xml";
-        commonRepository.generateXML(User.class, user, xmlFile);
+        commonRepository.generateXML(CoverLetter.class, coverLetter, xmlFile);
     }
 }

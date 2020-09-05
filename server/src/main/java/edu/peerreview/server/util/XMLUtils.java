@@ -19,9 +19,11 @@ public class XMLUtils {
         calendar.setTime(date);
         return DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar);
     }
+
     public Date XMLGregorianCalendarToDate(XMLGregorianCalendar xmlGregorianCalendar) {
         return xmlGregorianCalendar.toGregorianCalendar().getTime();
     }
+
     public String objectToXML(Object object) {
         String XML = "";
         try {

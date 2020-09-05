@@ -26,7 +26,7 @@
     <xs:complexType name="Content">
         <xs:sequence>
             <xs:element name="text" type="xs:string"/>
-            <xs:element name="annotation" type="xs:string"/>
+            <xs:element name="annotation" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="Metadata">

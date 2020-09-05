@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    targetNamespace="http://www.peerreview.edu/cover_letter"
-    xmlns="http://www.peerreview.edu/cover_letter"> </xs:schema>
+    targetNamespace="http://www.peerreview.edu/cover_letter" xmlns:c="http://www.peerreview.edu/cover_letter">
+    <xs:complexType name="CoverLetter">
+        <xs:sequence>
+            <xs:element name="Author" type="xs:string"/>
+            <xs:element name="Editor" type="c:Editor"/>
+            <xs:element name="date" type="xs:date"/>
+            <xs:element name="Text" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="cover_letter_id"/>
+    </xs:complexType>
+    <xs:element name="CoverLetter" type="c:CoverLetter"/>
+    <xs:complexType name="Editor">
+        <xs:sequence>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="lastName" type="xs:string"/>
+            <xs:element name="institution" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

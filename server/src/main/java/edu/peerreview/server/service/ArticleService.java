@@ -1,23 +1,23 @@
 package edu.peerreview.server.service;
 
-import edu.peerreview.server.model.auth.SignUpRequest;
-import edu.peerreview.server.model.xml.Address;
+import com.lowagie.text.DocumentException;
 import edu.peerreview.server.model.xml.Article;
 import edu.peerreview.server.model.xml.Author;
-import edu.peerreview.server.model.xml.User;
+import edu.peerreview.server.repository.ArticleRepository;
 import edu.peerreview.server.repository.AuthorRepository;
 import edu.peerreview.server.repository.CommonRepository;
-import edu.peerreview.server.repository.ArticleRepository;
-import edu.peerreview.server.util.DBConnection;
 import edu.peerreview.server.util.XMLUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.xml.sax.SAXException;
 import org.xmldb.api.base.ResourceSet;
 import org.xmldb.api.base.XMLDBException;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import java.io.IOException;
 import java.util.*;
 
 @Service
@@ -30,6 +30,8 @@ public class ArticleService {
     private AuthorRepository authorRepository;
     @Autowired
     private AuthorService authorService;
+    @Autowired
+    private DocumentService documentService;
 
     public Article findByID(String ID) throws XMLDBException {
         String xpath = "/a:Article[a:article_id='" + ID + "']";
@@ -86,11 +88,26 @@ public class ArticleService {
         return commonRepository.queryArticle("//a:Article[a:article_ID='" + ID + "']").getSize() == 0;
     }
 
-    public void generateDocuments(String ID) {
-
-    }
-
     public Article createXML(String article) {
         return null;
+    }
+
+    public void generateDocuments(String id) throws XMLDBException, IOException, DocumentException, TransformerException, SAXException, ParserConfigurationException, JAXBException {
+        String xpath = "//a:Article[@article_id='" + id + "']";
+        ResourceSet result = commonRepository.queryArticle(xpath);
+        Article article = (Article) commonRepository.resourceSetToClass(result, Article.class);
+
+        String xmlInstance = "data/xsd/instance/" + "article" + article.getArticleId() + ".xml";
+        String xml = "data/xml/" + "article_" + article.getArticleId() + ".xml";
+        String xsl = "data/xsl/article.xsl";
+        String html = "data/html/" + "article_" + article.getArticleId() + ".html";
+        String pdf = "data/pdf/" + "article_" + article.getArticleId() + ".pdf";
+
+        documentService.createXML(Article.class, article, xmlInstance);
+        documentService.linkXLS(xmlInstance, "article", xml);
+//        documentService.generateHTML(xml, xsl, html);
+//        documentService.generatePDF(pdf, html);
+
+        System.out.println("Docs generated!");
     }
 }

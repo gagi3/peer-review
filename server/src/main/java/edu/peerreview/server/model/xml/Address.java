@@ -1,4 +1,3 @@
-
 package edu.peerreview.server.model.xml;
 
 import javax.annotation.Generated;
@@ -9,9 +8,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * <p>Java class for Address complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="Address">
  *   &lt;complexContent>
@@ -39,15 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Address", namespace = "http://www.peerreview.edu/address", propOrder = {
-    "postalCode",
-    "location",
-    "street",
-    "number"
+        "postalCode",
+        "location",
+        "street",
+        "number"
 })
 @XmlRootElement(name = "Address", namespace = "http://www.peerreview.edu/address")
 @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
@@ -74,7 +71,6 @@ public class Address {
 
     /**
      * Gets the value of the postalCode property.
-     * 
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public int getPostalCode() {
@@ -83,7 +79,6 @@ public class Address {
 
     /**
      * Sets the value of the postalCode property.
-     * 
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public void setPostalCode(int value) {
@@ -92,11 +87,9 @@ public class Address {
 
     /**
      * Gets the value of the location property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public String getLocation() {
@@ -105,11 +98,9 @@ public class Address {
 
     /**
      * Sets the value of the location property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public void setLocation(String value) {
@@ -118,11 +109,9 @@ public class Address {
 
     /**
      * Gets the value of the street property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public String getStreet() {
@@ -131,11 +120,9 @@ public class Address {
 
     /**
      * Sets the value of the street property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public void setStreet(String value) {
@@ -144,7 +131,6 @@ public class Address {
 
     /**
      * Gets the value of the number property.
-     * 
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public int getNumber() {
@@ -153,7 +139,6 @@ public class Address {
 
     /**
      * Sets the value of the number property.
-     * 
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public void setNumber(int value) {
@@ -162,11 +147,9 @@ public class Address {
 
     /**
      * Gets the value of the addressID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public String getAddressID() {
@@ -175,11 +158,9 @@ public class Address {
 
     /**
      * Sets the value of the addressID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public void setAddressID(String value) {

@@ -4,7 +4,6 @@ import edu.peerreview.server.model.xml.Article;
 import edu.peerreview.server.service.JAXBService;
 import edu.peerreview.server.util.DBConnection;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.xmldb.api.base.Collection;
 import org.xmldb.api.base.ResourceSet;

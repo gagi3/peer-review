@@ -14,6 +14,7 @@ import org.xmldb.api.base.XMLDBException;
 public class AuthorController {
     @Autowired
     AuthorService authorService;
+
     @GetMapping("/get/{email}")
     public ResponseEntity<Author> get(@PathVariable String email) throws XMLDBException {
         return new ResponseEntity<>(authorService.findByEmail(email), HttpStatus.OK);

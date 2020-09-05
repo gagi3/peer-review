@@ -2,7 +2,6 @@ package edu.peerreview.server.model.auth;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import edu.peerreview.server.model.xml.User;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -11,9 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @NoArgsConstructor
 @Data

@@ -1,4 +1,3 @@
-
 package edu.peerreview.server.model.xml;
 
 import javax.annotation.Generated;
@@ -7,9 +6,9 @@ import javax.xml.bind.annotation.*;
 
 /**
  * <p>Java class for Content complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="Content">
  *   &lt;complexContent>
@@ -22,13 +21,11 @@ import javax.xml.bind.annotation.*;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Content", namespace = "http://www.peerreview.edu/article", propOrder = {
-    "text",
-    "annotation"
+        "text",
+        "annotation"
 })
 @XmlRootElement
 @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
@@ -37,17 +34,15 @@ public class Content {
     @XmlElement(namespace = "http://www.peerreview.edu/article", required = true)
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     protected String text;
-    @XmlElement(namespace = "http://www.peerreview.edu/article", required = true)
+    @XmlElement(namespace = "http://www.peerreview.edu/article", required = false)
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     protected String annotation;
 
     /**
      * Gets the value of the text property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public String getText() {
@@ -56,11 +51,9 @@ public class Content {
 
     /**
      * Sets the value of the text property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public void setText(String value) {
@@ -69,11 +62,9 @@ public class Content {
 
     /**
      * Gets the value of the annotation property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public String getAnnotation() {
@@ -82,11 +73,9 @@ public class Content {
 
     /**
      * Sets the value of the annotation property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     public void setAnnotation(String value) {

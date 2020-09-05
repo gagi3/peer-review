@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet?><a:Article xmlns:a="http://www.peerreview.edu/article" xmlns:au="http://www.peerreview.edu/author" xmlns:c="http://www.peerreview.edu/cover_letter" xmlns:u="http://www.peerreview.edu/user" article_id="b6f75ecd-639e-4e24-bc06-0beb8eba4301">
+    <a:metadata>
+        <a:name>fields</a:name>
+        <a:data>coronavirus</a:data>
+    </a:metadata>
+    <a:metadata>
+        <a:name>times referenced</a:name>
+        <a:data>16</a:data>
+    </a:metadata>
+    <a:authors>vlada@xml.com</a:authors>
+    <a:date>2020-09-05+02:00</a:date>
+    <a:title>COVID-19 Recovery</a:title>
+    <a:abstract>This article studies COVID-19 recovery.</a:abstract>
+    <a:keywords>COVID-19</a:keywords>
+    <a:keywords>SARS</a:keywords>
+    <a:keywords>recoveru</a:keywords>
+    <a:keywords>virus</a:keywords>
+    <a:section>
+        <a:title>Motivation</a:title>
+        <a:content>
+            <a:text>Studying COVID-19 recovery will help with diagnosis.</a:text>
+            <a:annotation>This is good.</a:annotation>
+        </a:content>
+    </a:section>
+    <a:section>
+        <a:title>Conclusion</a:title>
+        <a:content>
+            <a:text>So brilliant.</a:text>
+        </a:content>
+    </a:section>
+    <a:literature>b7746ac9-9f57-41c2-8a6a-f4ce53ed3298</a:literature>
+</a:Article>

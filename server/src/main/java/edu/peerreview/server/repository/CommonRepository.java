@@ -1,6 +1,5 @@
 package edu.peerreview.server.repository;
 
-import edu.peerreview.server.model.xml.User;
 import edu.peerreview.server.service.JAXBService;
 import edu.peerreview.server.util.DBConnection;
 import edu.peerreview.server.util.MetaExtractor;
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import org.xmldb.api.base.*;
 import org.xmldb.api.modules.XPathQueryService;
 
-import javax.accessibility.AccessibleComponent;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -80,5 +78,11 @@ public class CommonRepository {
         HashMap<String, String> namespace = new HashMap<>();
         namespace.put("a", "http://www.peerreview.edu/article");
         return runXpath("/db/peerreview/article", namespace, query);
+    }
+
+    public ResourceSet queryCoverLetter(String query) throws XMLDBException {
+        HashMap<String, String> namespace = new HashMap<>();
+        namespace.put("c", "http://www.peerreview.edu/cover_letter");
+        return runXpath("/db/peerreview/cover_letter", namespace, query);
     }
 }

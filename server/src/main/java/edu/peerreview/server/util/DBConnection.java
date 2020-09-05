@@ -21,6 +21,7 @@ public class DBConnection {
     public Collection getOrCreateCollection(String collectionURI) throws XMLDBException {
         return getOrCreateCollection(collectionURI, 0);
     }
+
     @SneakyThrows
     private Collection getOrCreateCollection(String collectionURI, Integer pathSegmentOffset) throws XMLDBException {
         System.out.println(Arrays.toString(DatabaseManager.getDatabases()));

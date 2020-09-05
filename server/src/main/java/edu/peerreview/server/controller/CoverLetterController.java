@@ -1,8 +1,8 @@
 package edu.peerreview.server.controller;
 
 import com.lowagie.text.DocumentException;
-import edu.peerreview.server.model.xml.Article;
-import edu.peerreview.server.service.ArticleService;
+import edu.peerreview.server.model.xml.CoverLetter;
+import edu.peerreview.server.service.CoverLetterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,29 +18,29 @@ import java.io.IOException;
 
 @CrossOrigin
 @RestController
-@RequestMapping(value = "/api/article")
-public class ArticleController {
+@RequestMapping(value = "/api/cover-letter")
+public class CoverLetterController {
     @Autowired
-    ArticleService articleService;
+    CoverLetterService coverLetterService;
 
     @GetMapping("/get/{ID}")
-    public ResponseEntity<Article> get(@PathVariable String ID) throws XMLDBException {
-        return new ResponseEntity<>(articleService.findByID(ID), HttpStatus.OK);
+    public ResponseEntity<CoverLetter> get(@PathVariable String ID) throws XMLDBException {
+        return new ResponseEntity<>(coverLetterService.findByID(ID), HttpStatus.OK);
     }
 
     @PostMapping(value = "/create")
-    public ResponseEntity<Article> create(@RequestBody Article article) throws XMLDBException, JAXBException, DatatypeConfigurationException {
-        return new ResponseEntity<>(articleService.create(article), HttpStatus.OK);
+    public ResponseEntity<CoverLetter> create(@RequestBody CoverLetter coverLetter) throws XMLDBException, JAXBException, DatatypeConfigurationException {
+        return new ResponseEntity<>(coverLetterService.create(coverLetter), HttpStatus.OK);
     }
 
     @PostMapping(value = "/create/XML")
-    public ResponseEntity<Article> createXML(@RequestBody String article) throws XMLDBException, JAXBException, DatatypeConfigurationException {
-        return new ResponseEntity<>(articleService.createXML(article), HttpStatus.OK);
+    public ResponseEntity<CoverLetter> createXML(@RequestBody String coverLetter) throws XMLDBException, JAXBException, DatatypeConfigurationException {
+        return new ResponseEntity<>(coverLetterService.createXML(coverLetter), HttpStatus.OK);
     }
 
     @GetMapping("/generate/{ID}")
     public ResponseEntity<String> generateDocuments(@PathVariable String ID) throws XMLDBException, SAXException, ParserConfigurationException, TransformerException, IOException, JAXBException, DocumentException {
-        articleService.generateDocuments(ID);
+        coverLetterService.generateDocuments(ID);
         return new ResponseEntity<>("Generation successful!", HttpStatus.OK);
     }
 }

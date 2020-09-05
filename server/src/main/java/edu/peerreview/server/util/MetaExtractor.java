@@ -17,7 +17,7 @@ import java.io.OutputStream;
 
 @Component
 public class MetaExtractor {
-    private TransformerFactory transformerFactory;
+    private final TransformerFactory transformerFactory;
 
     public MetaExtractor() throws SAXException, IOException {
         transformerFactory = new TransformerFactoryImpl();
