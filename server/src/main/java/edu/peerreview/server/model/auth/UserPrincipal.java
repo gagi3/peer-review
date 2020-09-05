@@ -1,6 +1,7 @@
 package edu.peerreview.server.model.auth;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import edu.peerreview.server.model.xml.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,34 +10,39 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
 public class UserPrincipal implements UserDetails {
     private static final long serialVersionUID = 1L;
-    private Long id;
+    private String id;
     private String username;
     @JsonIgnore
     private String password;
     private String firstName;
     private String lastName;
-    private Boolean accountExpired;
-    private Boolean accountLocked;
-    private Boolean enabled;
-    private Boolean credentialsExpired;
     private Collection<? extends GrantedAuthority> authorities;
 
-//    public static UserPrincipal build(User user) {
-//        List<GrantedAuthority> authorities = user.getRoles().stream()
-//                .map(role -> new SimpleGrantedAuthority(role.getName().name())).collect(Collectors.toList());
-//        return new UserPrincipal(user.getId(), user.getUsername(), user.getPassword(),
-//                user.getFirstName(), user.getLastName(), user.getAccountExpired(),
-//                user.getAccountLocked(), user.getEnabled(), user.getCredentialsExpired(),
-//                authorities);
-//    }
+    public UserPrincipal(String id, String username, String password, String firstName, String lastName, Collection<? extends GrantedAuthority> authorities) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.authorities = authorities;
+    }
+
+    public static UserPrincipal build(User user) {
+        Set<GrantedAuthority> authorities = new HashSet<>();
+        authorities.add(new SimpleGrantedAuthority(user.getType()));
+        return new UserPrincipal(user.getUserID(), user.getEmail(), user.getPassword(),
+                user.getFirstName(), user.getLastName(),
+                authorities);
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -55,21 +61,21 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return !accountExpired;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return !accountLocked;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return !credentialsExpired;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return enabled;
+        return true;
     }
 }
