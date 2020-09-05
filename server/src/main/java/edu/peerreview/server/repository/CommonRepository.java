@@ -71,7 +71,14 @@ public class CommonRepository {
 
     public ResourceSet queryAuthor(String query) throws XMLDBException {
         HashMap<String, String> namespace = new HashMap<>();
+        namespace.put("u", "http://www.peerreview.edu/user");
         namespace.put("au", "http://www.peerreview.edu/author");
-        return runXpath("/db/peerreview/user", namespace, query);
+        return runXpath("/db/peerreview/author", namespace, query);
+    }
+
+    public ResourceSet queryArticle(String query) throws XMLDBException {
+        HashMap<String, String> namespace = new HashMap<>();
+        namespace.put("a", "http://www.peerreview.edu/article");
+        return runXpath("/db/peerreview/article", namespace, query);
     }
 }

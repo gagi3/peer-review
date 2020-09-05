@@ -28,13 +28,15 @@ public class AuthorService {
     private PasswordEncoder encoder;
 
     public Author findByEmail(String email) throws XMLDBException {
-        String xpath = "/au:Author[au:email='" + email + "']";
+        String xpath = "//au:Author";
         HashMap<String, String> namespace = new HashMap<>();
-        namespace.put("u", "http://www.peerreview.edu/author");
+        namespace.put("au", "http://www.peerreview.edu/author");
+        namespace.put("u", "http://www.peerreview.edu/user");
         ResourceSet result = commonRepository.runXpath("/db/peerreview/author", namespace, xpath);
         if (result.getSize() == 0) {
             return null;
         }
+        System.out.println(result.getResource(0).getContent().toString());
         return (Author) commonRepository.resourceSetToClass(result, Author.class);
     }
 

@@ -62,7 +62,7 @@ public class Article {
     protected List<Metadata> metadata;
     @XmlElement(namespace = "http://www.peerreview.edu/article", required = true)
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    protected List<Author> authors;
+    protected List<String> authors;
     @XmlElement(namespace = "http://www.peerreview.edu/article", required = true)
     @XmlSchemaType(name = "date")
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
@@ -73,21 +73,41 @@ public class Article {
     @XmlElement(name = "abstract", namespace = "http://www.peerreview.edu/article", required = true)
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     protected String _abstract;
-    @XmlElementRef(name = "keywords", namespace = "http://www.peerreview.edu/article", type = JAXBElement.class)
+    @XmlElement(name = "keywords", namespace = "http://www.peerreview.edu/article")
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    protected List<JAXBElement<List<String>>> keywords;
+    protected List<String> keywords;
     @XmlElement(namespace = "http://www.peerreview.edu/article", required = true)
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     protected List<Section> section;
     @XmlElement(namespace = "http://www.peerreview.edu/article", required = true)
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    protected List<Article> literature;
+    protected List<String> literature;
     @XmlAttribute(name = "article_id")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
     @XmlSchemaType(name = "ID")
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
     protected String articleId;
+
+    public void setMetadata(List<Metadata> metadata) {
+        this.metadata = metadata;
+    }
+
+    public void setAuthors(List<String> authors) {
+        this.authors = authors;
+    }
+
+    public void setKeywords(List<String> keywords) {
+        this.keywords = keywords;
+    }
+
+    public void setSection(List<Section> section) {
+        this.section = section;
+    }
+
+    public void setLiterature(List<String> literature) {
+        this.literature = literature;
+    }
 
     /**
      * Gets the value of the metadata property.
@@ -142,9 +162,9 @@ public class Article {
      * 
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    public List<Author> getAuthors() {
+    public List<String> getAuthors() {
         if (authors == null) {
-            authors = new ArrayList<Author>();
+            authors = new ArrayList<String>();
         }
         return this.authors;
     }
@@ -250,9 +270,9 @@ public class Article {
      * 
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    public List<JAXBElement<List<String>>> getKeywords() {
+    public List<String> getKeywords() {
         if (keywords == null) {
-            keywords = new ArrayList<JAXBElement<List<String>>>();
+            keywords = new ArrayList<String>();
         }
         return this.keywords;
     }
@@ -305,14 +325,14 @@ public class Article {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Article }
+     * {@link String }
      * 
      * 
      */
     @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
-    public List<Article> getLiterature() {
+    public List<String> getLiterature() {
         if (literature == null) {
-            literature = new ArrayList<Article>();
+            literature = new ArrayList<String>();
         }
         return this.literature;
     }

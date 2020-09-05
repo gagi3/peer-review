@@ -30,6 +30,7 @@ import javax.xml.bind.annotation.*;
     "text",
     "annotation"
 })
+@XmlRootElement
 @Generated(value = "com.sun.tools.internal.xjc.Driver", date = "2020-09-04T03:21:26+02:00", comments = "JAXB RI v2.2.8-b130911.1802")
 public class Content {
 
