@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet?><c:CoverLetter xmlns:c="http://www.peerreview.edu/cover_letter" xmlns:a="http://www.peerreview.edu/article" xmlns:au="http://www.peerreview.edu/author" xmlns:u="http://www.peerreview.edu/user" cover_letter_id="4a5376d0-d12c-43f9-835b-230181dcf0e7">
+    <c:Author>vlada@xml.com</c:Author>
+    <c:Editor>
+        <c:firstName>Marijan</c:firstName>
+        <c:lastName>Marjanovic</c:lastName>
+        <c:institution>FTN</c:institution>
+    </c:Editor>
+    <c:date>2020-09-05+02:00</c:date>
+    <c:Text>Dear x
+		
+		I am submitting my article.
+		
+		Thanks for reading.
+	</c:Text>
+</c:CoverLetter>
